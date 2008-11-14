@@ -1,7 +1,7 @@
 (define (smart_square x)
   (if x (* x x) 0))
 
-(define (counter a b c)
+(define (summator a b c)
   (+ (smart_square a) (smart_square b) (if (and a b) 0 (smart_square c)))
   )
 
@@ -10,6 +10,6 @@
   )
 
 (define (main a b c)
-  (counter (match? a b c) (match? b a c) (match? c a b))
+  (summator (match? a b c) (match? b a c) (match? c a b))
   )
 
