@@ -11,7 +11,7 @@
   (display old-guess) (display " ") (display guess) (newline)
   (if (good-enough? old-guess guess)
       guess
-      (sqrt-iter guess (improve guess x) x)))
+      (cube-iter guess (improve guess x) x)))
 
 
 (define (improve guess x)
