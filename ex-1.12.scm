@@ -1,0 +1,20 @@
+; Pascal's triangle
+(define (pascal-triangle n)
+  (define (get-elem-value index rownum)
+;    (display '"index=") (display index) (display '" rownum=") (display rownum) (display '" ")
+    (if (or (= index 0) (>= index rownum)) 1
+      (+ (get-elem-value (- index 1) (- rownum 1)) (get-elem-value index (- rownum 1)))
+      ))
+  (define (print-elem i n)
+;    (display '"i=") (display i) (display '" ") (display (get-elem-value i n)) (display '" ")
+    (display '" ") (display (get-elem-value i n))
+    (if (< i n)
+      (print-elem (+ i 1) n)))
+  (define (print-row i n)
+;    (display '"i=") (display i) (display '" n=") (display n)(newline)
+    (print-elem 0 i) (newline)
+    (if (> i 0)
+      (print-row (- i 1) n)))
+  (print-row (- n 1) n)
+  )
+
